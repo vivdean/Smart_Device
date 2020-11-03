@@ -1,0 +1,30 @@
+.social-list {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet) {
+    order: 3;
+    margin-top: 12px;
+    margin-left: auto;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+    width: 112px;
+    justify-content: space-between;
+  }
+}
+
+.social-list li {
+  margin-right: 13px;
+
+  @media (max-width: $tablet) {
+    margin-left: 15px;
+    margin-right: 0;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,204 @@
+.catalog {
+  background-color: $dark-grey;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: $white;
+}
+
+.catalog h2 {
+  @include font-info(36px, 400, 51px);
+  padding-top: 60px;
+  margin-bottom: 50px;
+
+  @media (max-width: $tablet) {
+    @include font-info(32px, 400, 45px);
+    padding-top: 22px;
+    padding-right: 90px;
+  }
+
+  @media (max-width: $mobile) {
+    @include font-info(28px, 400, 39px);
+    padding-right: 0;
+    padding-left: 10px;
+    padding-top: 27px;
+    margin-bottom: 42px;
+  }
+}
+
+.catalog__wrap {
+  @include container;
+  max-width: 1170px;
+  overflow: hidden;
+}
+
+.catalog ul {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -2.5%;
+  overflow: hidden;
+  padding-bottom: 65px;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    margin-right: 0;
+    overflow: visible;
+    padding-bottom: 18px;
+  }
+}
+
+.catalog__item {
+  flex-grow: 0;
+  flex-shrink: 1;
+  width: 30.8%;
+  margin-right: 2.5%;
+  margin-bottom: 45px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 620px;
+  position: relative;
+
+  &--production {
+    background-image: url("../img/production-desktop@1x.png");
+  }
+
+  &--assembly {
+    background-image: url("../img/assembly-desktop@1x.png");
+  }
+
+  &--lightning {
+    background-image: url("../img/lightning-desktop@1x.png");
+  }
+
+  @media (min-resolution: $retina-dppx) {
+    &--production {
+      background-image: url("../img/production-desktop@2x.png");
+    }
+
+    &--assembly {
+      background-image: url("../img/assembly-desktop@2x.png");
+    }
+
+    &--lightning {
+      background-image: url("../img/lightning-desktop@2x.png");
+    }
+  }
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    margin-right: 0;
+    box-sizing: border-box;
+    min-height: 256px;
+
+    &--production {
+      background-image: url("../img/production-tablet@1x.png");
+    }
+
+    &--assembly {
+      background-image: url("../img/assembly-tablet@1x.png");
+    }
+
+    &--lightning {
+      background-image: url("../img/lightning-tablet@1x.png");
+    }
+
+    @media (min-resolution: $retina-dppx) {
+      &--production {
+        background-image: url("../img/production-tablet@2x.png");
+      }
+
+      &--assembly {
+        background-image: url("../img/assembly-tablet@2x.png");
+      }
+
+      &--lightning {
+        background-image: url("../img/lightning-tablet@2x.png");
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 30px;
+
+    &--production {
+      background-image: url("../img/production-mobile@1x.png");
+    }
+
+    &--assembly {
+      background-image: url("../img/assembly-mobile@1x.png");
+    }
+
+    &--lightning {
+      background-image: url("../img/lightning-mobile@1x.png");
+    }
+
+    @media (min-resolution: $retina-dppx) {
+      &--production {
+        background-image: url("../img/production-mobile@2x.png");
+      }
+
+      &--assembly {
+        background-image: url("../img/assembly-mobile@2x.png");
+      }
+
+      &--lightning {
+        background-image: url("../img/lightning-mobile@2x.png");
+      }
+    }
+  }
+}
+
+.catalog__item a {
+  display: block;
+  height: 100%;
+
+  &::before {
+    @include pseudo;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $dark-grey-opacity;
+    opacity: 0.8;
+  }
+
+  &::after {
+    @include pseudo;
+    content: ">";
+    width: 63px;
+    height: 63px;
+    bottom: 0;
+    right: 0;
+    background-color: $blue;
+    text-align: center;
+    line-height: 63px;
+  }
+}
+
+.catalog__item span {
+  @include font-info(20px, 400, 30px);
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  position: absolute;
+  top: 8.3%;
+  left: 12.2%;
+
+  @media (max-width: $tablet) {
+    top: 15%;
+    left: 6.3%;
+  }
+
+  @media (max-width: $mobile) {
+    top: 8%;
+    left: 12%;
+  }
+}
+
+.catalog__item--lightning span {
+  @media (max-width: $tablet) {
+    top: 20%;
+  }
+
+  @media (max-width: $mobile) {
+    top: 11.5%;
+  }
+}

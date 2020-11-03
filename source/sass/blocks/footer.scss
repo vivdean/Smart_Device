@@ -1,0 +1,372 @@
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background: linear-gradient(180deg, $white 83%, $grey-text 83.5%, $white 83.5%);
+
+  @media (max-width: $tablet) {
+    background: $white;
+  }
+}
+
+.footer__content {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.footer__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 53px;
+  margin-bottom: 42px;
+
+  @media (max-width: $tablet) {
+    padding-top: 0;
+    margin-bottom: 33px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 0;
+  }
+}
+
+.footer__main {
+  padding-top: 14px;
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 19px;
+    position: relative;
+
+    &::after {
+      @include pseudo;
+      background: $dark-grey;
+      opacity: 0.5;
+      height: 1px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 46px;
+    padding-bottom: 16px;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.footer a {
+  &:hover {
+    color: $blue;
+  }
+}
+
+.footer__logo {
+  display: block;
+  margin-bottom: 54px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 0;
+    order: 1;
+  }
+}
+
+.footer__logo p {
+  @include font-info(12px, 500, 14px);
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: $grey;
+}
+
+.footer__privacy {
+  display: flex;
+  justify-content: space-between;
+  width: 57.7%;
+  margin-left: auto;
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    position: relative;
+    padding-top: 10px;
+
+    &::after {
+      @include pseudo;
+      background: $dark-grey;
+      opacity: 0.5;
+      height: 1px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      left: 0;
+      top: 0;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 28px;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.footer h3 {
+  @include font-info(15px, 400, 16px);
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  color: $dark-grey;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer__nav {
+  @media (max-width: $mobile) {
+    width: 100%;
+    position: relative;
+    margin-top: 17px;
+
+    &::before,
+    &::after {
+      @include pseudo;
+      background: $dark-grey;
+      opacity: 0.5;
+      height: 1px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      left: 0;
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.footer__nav-list {
+  @include reset-list;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  &--first {
+    margin-right: 16%;
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &--first {
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 10px;
+
+    &--first {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer__nav li {
+  max-width: 240px;
+}
+
+.footer__nav a,
+.footer__contacts a,
+.footer__contacts p {
+  @include font-info(15px, 400, 25px);
+  color: $dark-grey;
+  opacity: 0.5;
+}
+
+.footer__privacy p {
+  @include font-info(0.7vw, 400, 24px);
+  color: $dark-grey;
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+
+  @media (max-width: $tablet) {
+    @include font-info(13px, 400, 24px);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 0;
+    margin-bottom: 22px;
+  }
+}
+
+.footer__contacts {
+  @media (max-width: $tablet) {
+    margin-right: 11px;
+  }
+
+  @media (max-width: $mobile) {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+    &::after {
+      @include pseudo;
+      background: $dark-grey;
+      opacity: 0.5;
+      height: 1px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.footer__contacts h3,
+.footer__nav h3 {
+  margin-bottom: 27px;
+  margin-top: 14px;
+
+  @media (max-width: $tablet) {
+    margin-top: 37px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 29px;
+    margin-top: 30px;
+  }
+}
+
+.footer__contacts p {
+  margin-bottom: 0;
+}
+
+.footer__contacts ul {
+  @include reset-list;
+
+  @media (max-width: $mobile) {
+    padding-right: 10px;
+    margin-bottom: 27px;
+  }
+}
+
+.footer__production {
+  display: flex;
+  width: 550px;
+
+  @include font-info(0.7vw, 400, 24px);
+  color: $dark-grey;
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+
+  @media (max-width: $tablet) {
+    @include font-info(13px, 400, 24px);
+    letter-spacing: 0.04em;
+    position: static;
+    order: 2;
+    margin-left: 12%;
+    padding-top: 3px;
+    width: 280px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    width: auto;
+  }
+}
+
+.footer__desktop-only {
+  margin-right: 70px;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.footer__remark {
+  @media (max-width: $tablet) {
+    position: static;
+  }
+}
+
+.footer__accordion button {
+  display: none;
+
+  @media (max-width: $mobile) {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: $white;
+    outline: none;
+    background-image: url("../img/menu-closed.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.footer__accordion--hide button {
+  @media (max-width: $mobile) {
+    background-image: url("../img/menu-opened.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.footer__accordion-content {
+  display: block;
+
+  &--nav {
+    width: 445px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      width: auto;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.footer__accordion-content--show {
+  display: block;
+}
+
+.footer__accordion-content--show.footer__accordion-content--nav {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+}

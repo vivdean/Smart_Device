@@ -1,0 +1,48 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  font-family: "PT Mono", "Roboto Condensed", "Arial", sans-serif;
+  color: $grey;
+  background-color: $white;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

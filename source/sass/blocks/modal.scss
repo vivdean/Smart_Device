@@ -1,0 +1,125 @@
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 3;
+  background: $blacktoning-bg;
+
+  &--show {
+    display: block;
+  }
+}
+
+.modal__content {
+  width: 490px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $blue;
+  color: $white;
+  padding: 39px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.modal h2 {
+  @include font-info(28px, 400, 39px);
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  margin-top: 0;
+}
+
+.modal p {
+  @include font-info(16px, 400, 22px);
+}
+
+.modal ul {
+  @include reset-list;
+}
+
+.modal li {
+  margin-bottom: 30px;
+}
+
+.modal input,
+.modal textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: $white;
+  border: none;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.modal input::placeholder,
+.modal textarea::placeholder {
+  @include font-info(16px, 400, 22px);
+  color: $white;
+}
+
+.modal input[type="text"],
+.modal input[type="tel"] {
+  padding: 14px 20px;
+  width: 100%;
+}
+
+.modal textarea {
+  width: 100%;
+}
+
+.modal__button {
+  color: $white;
+  padding: 10px 30px;
+  width: 100%;
+}
+
+.modal input[type="checkbox"] + label {
+  @include font-info(14px, 400, 16px);
+  opacity: 0.8;
+  padding-left: 35px;
+  position: relative;
+  display: block;
+}
+
+.modal input[type="checkbox"] + label::before {
+  @include pseudo;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid $white;
+  cursor: pointer;
+}
+
+.modal input[type="checkbox"]:checked + label::after {
+  @include pseudo;
+  left: 5px;
+  top: 7px;
+  background-image: url("../img/checked.svg");
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 7px;
+}
+
+.modal input[type="checkbox"] {
+  &:hover + label::before,
+  &:focus + label::before {
+    border: 1px solid $grey;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 20px;
+  width: 17px;
+  height: 17px;
+  background: url("../img/close-btn.svg");
+  background-repeat: no-repeat;
+  border: none;
+}

@@ -1,0 +1,154 @@
+.about-us {
+  @include container;
+  max-width: 1170px;
+  background-image: url("../img/2005-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: -15px 8px;
+  background-size: 220px 317px;
+  margin-top: 78px;
+  margin-bottom: 102px;
+  min-height: 317px;
+  position: relative;
+  z-index: -1;
+
+  @media (min-resolution: $retina-dppx) {
+    background-image: url("../img/2005-desktop@2x.png");
+  }
+
+  &::before,
+  &::after {
+    @include pseudo;
+    width: 872px;
+    height: 873px;
+    background-image: url("../img/triangle-big.svg");
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  &::before {
+    top: -400px;
+    left: -655px;
+    transform: rotate(-180deg);
+  }
+
+  &::after {
+    bottom: 145px;
+    right: 130px;
+  }
+
+  @media (max-width: $tablet) {
+    background-image: url("../img/2005-tablet@1x.png");
+    background-size: 244px 362px;
+    background-position: 0;
+    margin-top: 0;
+    margin-bottom: 73px;
+    min-height: 362px;
+    padding-top: 11px;
+
+    &::after {
+      top: -577px;
+      left: 210px;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/2005-tablet@2x.png");
+    }
+  }
+
+  @media (max-width: $mobile) {
+    background-image: none;
+    padding-top: 20px;
+    margin-bottom: 65px;
+
+    &::after {
+      top: -580px;
+      left: -120px;
+    }
+  }
+}
+
+.about-us h2 {
+  @include font-info(36px, 400, 51px);
+  color: $grey;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  margin-bottom: 24px;
+
+  @media (max-width: $tablet) {
+    @include font-info(32px, 400, 45px);
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $mobile) {
+    @include font-info(28px, 400, 39px);
+    margin-bottom: 22px;
+  }
+}
+
+.about-us p {
+  @include font-info(16px, 400, 21.5px);
+  margin-bottom: 22px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 25px;
+  }
+}
+
+.about-us__wrap {
+  width: 84.5%;
+  margin-left: auto;
+
+  @media (max-width: $tablet) {
+    width: 74%;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.about-us__button {
+  color: $blue;
+  border: 1px solid $blue;
+  background-color: transparent;
+  padding: 12px 50px;
+  padding-top: 16px;
+  padding-left: 47px;
+  margin-top: 18px;
+
+  @media (max-width: $tablet) {
+    padding: 14px 51px 13px 50px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 10px;
+  }
+}
+
+.about-us__desktop-only {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.about-us__paragraf {
+  @media (max-width: $tablet) {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      display: inline-block;
+      content: "..";
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 46px;
+  }
+}
