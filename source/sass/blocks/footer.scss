@@ -370,3 +370,15 @@
     flex-direction: column;
   }
 }
+
+.footer__accordion--nojs .footer__toggle {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.footer__accordion--nojs .footer__accordion-content {
+  @media (max-width: $mobile) {
+    display: block;
+  }
+}
