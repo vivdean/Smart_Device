@@ -142,6 +142,7 @@
     &::after {
       position: absolute;
       display: inline-block;
+      vertical-align: bottom;
       content: "..";
       white-space: nowrap;
       overflow: hidden;
