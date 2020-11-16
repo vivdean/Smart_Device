@@ -90,10 +90,8 @@
 }
 
 .footer__privacy {
+  width: auto;
   display: flex;
-  justify-content: space-between;
-  width: 57.7%;
-  margin-left: auto;
 
   @media (max-width: $tablet) {
     width: 100%;
@@ -123,6 +121,14 @@
   }
 }
 
+.footer__developed {
+  margin-left: auto;
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+}
+
 .footer h3 {
   @include font-info(15px, 400, 16px);
   font-family: "Roboto Condensed", "Arial", sans-serif;
@@ -132,6 +138,12 @@
 }
 
 .footer__nav {
+  width: 32%;
+
+  @media (max-width: $tablet) {
+    width: auto;
+  }
+
   @media (max-width: $mobile) {
     width: 100%;
     position: relative;
@@ -197,12 +209,13 @@
   opacity: 0.5;
 }
 
-.footer__privacy p {
-  @include font-info(0.7vw, 400, 24px);
+.footer__privacy p,
+.footer__privacy a {
+  @include font-info(13px, 400, 24px);
   color: $dark-grey;
   opacity: 0.5;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 
   @media (max-width: $tablet) {
     @include font-info(13px, 400, 24px);
@@ -212,6 +225,19 @@
   @media (max-width: $mobile) {
     margin-top: 0;
     margin-bottom: 22px;
+  }
+}
+
+.footer__privacy a {
+  margin-top: 13px;
+  margin-left: 31.7%;
+
+  @media (max-width: $tablet) {
+    margin-left: 2px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 0;
   }
 }
 
@@ -249,13 +275,20 @@
   }
 
   @media (max-width: $mobile) {
-    margin-bottom: 29px;
-    margin-top: 30px;
+    padding-bottom: 29px;
+    padding-top: 30px;
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
 .footer__contacts p {
   margin-bottom: 0;
+
+  @media (max-width: $mobile) {
+    margin-top: 0;
+  }
 }
 
 .footer__contacts ul {
@@ -268,17 +301,15 @@
 }
 
 .footer__production {
-  display: flex;
-  width: 550px;
-
-  @include font-info(0.7vw, 400, 24px);
+  @include font-info(13px, 400, 24px);
   color: $dark-grey;
   opacity: 0.5;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   position: absolute;
+  content: "";
   bottom: 0;
-  left: 10px;
+  left: 16.6%;
 
   @media (max-width: $tablet) {
     @include font-info(13px, 400, 24px);
@@ -292,60 +323,56 @@
 
   @media (max-width: $mobile) {
     margin-left: 0;
-    margin-top: 10px;
-    margin-bottom: 7px;
+    margin-top: 25px;
+    margin-bottom: 18px;
     width: auto;
   }
 }
 
 .footer__desktop-only {
-  margin-right: 70px;
+  position: relative;
+  left: -5px;
 
   @media (max-width: $tablet) {
     display: none;
   }
 }
 
-.footer__remark {
-  @media (max-width: $tablet) {
-    position: static;
+.footer__title {
+  @media (max-width: $mobile) {
+    &::after {
+      @include pseudo;
+      top: 30px;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      border: none;
+      background-color: $white;
+      outline: none;
+      background-image: url("../img/menu-opened.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 }
 
-.footer__accordion button {
-  display: none;
-
-  @media (max-width: $mobile) {
-    display: block;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    border: none;
-    background-color: $white;
-    outline: none;
+.footer__accordion--show .footer__title {
+  &::after {
     background-image: url("../img/menu-closed.svg");
-    background-repeat: no-repeat;
-    background-position: center;
   }
 }
 
-.footer__accordion--hide button {
-  @media (max-width: $mobile) {
-    background-image: url("../img/menu-opened.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+.footer__accordion--nojs .footer__title {
+  &::after {
+    display: none;
   }
 }
 
-.footer__accordion-content {
+.footer__accordion--hide .footer__accordion-content {
   display: block;
 
   &--nav {
-    width: 445px;
     display: flex;
-    flex-wrap: wrap;
 
     @media (max-width: $tablet) {
       flex-direction: column;
@@ -358,22 +385,19 @@
   }
 }
 
-.footer__accordion-content--show {
-  display: block;
+.footer__accordion--show .footer__accordion-content {
+  @media (max-width: $mobile) {
+    margin-top: 0;
+    display: block;
+  }
 }
 
-.footer__accordion-content--show.footer__accordion-content--nav {
+.footer__accordion--show .footer__accordion-content--nav {
   display: flex;
   flex-wrap: wrap;
 
   @media (max-width: $tablet) {
     flex-direction: column;
-  }
-}
-
-.footer__accordion--nojs .footer__toggle {
-  @media (max-width: $mobile) {
-    display: none;
   }
 }
 

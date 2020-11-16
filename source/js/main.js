@@ -1,31 +1,37 @@
 'use strict';
 
 (function () {
-  var accordionToggles = document.querySelectorAll('.footer__toggle');
+
   var accordions = document.querySelectorAll('.footer__accordion');
 
   for (var i = 0; i < accordions.length; i++) {
     accordions[i].classList.remove('footer__accordion--nojs');
   }
 
-  var showMenu = function (j) {
-    return function () {
-      var accordionBlock = accordionToggles[j].closest('.footer__accordion');
-      var accordionContent = accordionToggles[j].nextElementSibling;
-      accordionBlock.classList.toggle('footer__accordion--hide');
-      if (accordionContent.classList.contains('footer__accordion-content--show')) {
-        accordionContent.classList.remove('footer__accordion-content--show');
-      } else {
-        accordionContent.classList.add('footer__accordion-content--show');
-      }
-    };
-  };
+  document.addEventListener('click', function (evt) {
 
+    if (!evt.target.classList.contains('footer__title')) {
+      return;
+    }
 
-  for (var j = 0; j < accordionToggles.length; j++) {
-    accordionToggles[j].addEventListener('click', showMenu(j));
-  }
+    var content = evt.target.parentElement;
+    if (!content) {
+      return;
+    }
 
+    if (content.classList.contains('footer__accordion--show')) {
+      content.classList.remove('footer__accordion--show');
+      return;
+    }
+
+    var accordionsActive = document.querySelectorAll('.footer__accordion--show');
+    for (var j = 0; j < accordionsActive.length; j++) {
+      accordionsActive[j].classList.remove('footer__accordion--show');
+    }
+
+    content.classList.add('footer__accordion--show');
+
+  }, false);
 })();
 
 /* eslint-disable */
@@ -68,6 +74,7 @@
 
   var openModal = function () {
     modal.classList.add('modal--show');
+    document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', onModalEcsPress);
     modalCloseBtn.addEventListener('click', function () {
       closeModal();
@@ -79,6 +86,7 @@
   var closeModal = function () {
     if (modal.classList.contains('modal--show')) {
       modal.classList.remove('modal--show');
+      document.body.style.overflow = '';
     }
     window.removeEventListener('keydown', onModalEcsPress);
   };

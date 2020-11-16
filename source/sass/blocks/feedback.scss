@@ -5,7 +5,7 @@
   padding-bottom: 96px;
 
   @media (max-width: $tablet) {
-    padding-top: 55px;
+    padding-top: 53px;
     padding-bottom: 87px;
   }
 
@@ -113,6 +113,8 @@
   border: none;
   padding: 10px 20px;
   box-sizing: border-box;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .feedback input::placeholder,
