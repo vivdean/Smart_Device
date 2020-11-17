@@ -49,8 +49,8 @@
   @include reset-list;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  max-width: 900px;
+  align-items: flex-start;
+  margin-left: auto;
 
   @media (max-width: $tablet) {
     padding-top: 4px;
@@ -64,6 +64,8 @@
 .header__top li {
   max-width: 220px;
   margin-left: 86px;
+  margin-bottom: 10px;
+  margin-top: 7px;
 
   @media (max-width: $tablet) {
     margin-left: 33px;
@@ -75,8 +77,14 @@
   }
 }
 
-.header__top .header__item-button {
+.header__button {
+  display: block;
+  align-self: flex-start;
+  padding: 13px 27px;
+  margin-top: 12px;
   margin-left: 50px;
+  width: 182px;
+  min-width: 182px;
 
   @media (max-width: $tablet) {
     display: none;
@@ -95,14 +103,6 @@
   @media (max-width: $tablet) {
     position: relative;
     z-index: 2;
-  }
-}
-
-.header__button {
-  padding: 10px 27px;
-
-  @media (max-width: $tablet) {
-    display: none;
   }
 }
 
